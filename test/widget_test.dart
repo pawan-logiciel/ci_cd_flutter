@@ -11,12 +11,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ci_cd_flutter/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test Pass Case', (WidgetTester tester) async {
+  testWidgets('Counter increments smoke test Fail case', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
     // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsOneWidget);
     expect(find.text('1'), findsNothing);
 
     // Tap the '+' icon and trigger a frame.
