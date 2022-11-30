@@ -49,6 +49,7 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build apk --split-per-abi
+      - uses: actions/upload-artifact@v1
         with:
           name: apk
           path: app/outputs/flutter-apk/app-armeabi-v7a-release.apk
