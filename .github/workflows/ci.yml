@@ -48,4 +48,7 @@ jobs:
           flutter-version: '3.x'
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build appbundle
+      - run: flutter build apk --split-per-abi
+        with:
+          name: apk
+          path: app/outputs/flutter-apk/app-armeabi-v7a-release.apk
