@@ -9,10 +9,13 @@ jobs:
     name: Run flutter test and analyze
     runs-on: ubuntu-latest
     steps:
-      - uses: MrSquaare/ssh-setup-action@v2
+      - uses: shimataro/ssh-key-action@v2
         with:
-          host: github.com
-          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_pawan_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          config: ${{ secrets.CONFIG }}
+          if_key_exists: replace
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v1
         with:
@@ -20,6 +23,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.x'
+      - run: ssh -T git@github.com
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
