@@ -9,7 +9,7 @@ jobs:
     name: Run flutter test and analyze
     runs-on: ubuntu-latest
     steps:
-      - uses: MrSquaare/ssh-setup-action@v1
+      - uses: MrSquaare/ssh-setup-action@v2
         with:
           host: github.com
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
