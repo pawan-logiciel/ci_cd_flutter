@@ -10,7 +10,7 @@ jobs:
           - id: read-version
             uses: NiklasLehnfeld/flutter-version-number-action@main
             with:
-              file-path: ci_cd_flutter/pubspec.yaml
+              file-path: ${{github.workspace}}/pubspec.yaml
           - uses: nick-invision/assert-action@v1
             with:
               expected: 0.0.1+1
