@@ -15,7 +15,7 @@ jobs:
             - name: Setup release information
               #get version name from app_versions.gradle file (5.6.2)
               run: |
-                 - run: echo "VERSION_INFORMATION=$(${{github.workspace}}/gradlew -q printVersionInformation)" >> $GITHUB_ENV
+                 - run: echo "VERSION_INFORMATION=$(${{github.workspace}}/android/app/build.gradle -q printVersionInformation)" >> $GITHUB_ENV
             - name: Extract release notes
               id: extract_release_notes
               uses: ffurrer2/extract-release-notes@v1
