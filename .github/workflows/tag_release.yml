@@ -13,6 +13,8 @@ jobs:
               file-path: ${{github.workspace}}/pubspec.yaml
           - uses: nick-invision/assert-action@v1
           - uses: ffurrer2/extract-release-notes@v1
+            with:
+              changelog_file: ${{github.workspace}}/CHANGELOG.md
           - uses: actions/create-release@v1
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
