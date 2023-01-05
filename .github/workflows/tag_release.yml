@@ -12,14 +12,13 @@ jobs:
             with:
               file-path: ${{github.workspace}}/pubspec.yaml
           - uses: nick-invision/assert-action@v1
-          - run: echo "VERSION_INFORMATION=$(${{ steps.read-version.outputs.version-number }})" >> $GITHUB_ENV
           - uses: ffurrer2/extract-release-notes@v1
           - uses: actions/create-release@v1
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
-                tag_name: ${{ env.VERSION_INFORMATION }}
-                release_name: v${{ env.VERSION_INFORMATION }}
+                tag_name: ${{ steps.read-version.outputs.version-number }}
+                release_name: v${{ steps.read-version.outputs.version-number }}
                 body: ${{ steps.extract_release_notes.outputs.release_notes }}
                 draft: false
                 prerelease: false
