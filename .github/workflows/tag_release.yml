@@ -4,6 +4,7 @@ on:
         branches: [ main ]
 jobs:
     tag_release:
+        name: Create Release And Upload Apk
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v3
