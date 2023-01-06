@@ -5,13 +5,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added 
+## [2.0.11] - 2023-01-06
 
-- Added Dutch translation
+### Added
 
-### Fixed
+- Testing Release Notes
 
-- Fixed foldouts in Dutch translation
+### Changed
+- Changed ChangeLog File
+
 
 ## [1.1.0] - 2019-02-15
 
