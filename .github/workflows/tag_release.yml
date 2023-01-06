@@ -25,7 +25,8 @@ jobs:
           - uses: ffurrer2/extract-release-notes@v1
             with:
               changelog_file: ${{github.workspace}}/CHANGELOG.md
-          - uses: actions/create-release@v1
+          - id: create_release
+            uses: actions/create-release@v1
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             with:
